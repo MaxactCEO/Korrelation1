@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #171946;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%;
+}
+#output, #results, #analysisTable {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    width: 100%;
+}
+label, input, button {
+    display: block;
+    margin: 20px 10px;
+    background-color: transparent;
+    color: #ffffff;
+}
+#vanorContainer {
+    display: flex;
+    flex-direction: column;
+}
+.vanaInput {
+    display: flex;
+    align-items: center;
+}
+.removeVana {
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+button {
+    background-color: #000000;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2);
+}
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+button:active {
+    background-color: #3e8e41;
+}
+#resultsTable, #analysisTable {
+    margin-top: 30px;
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    padding: 10px;
+    border: 1px solid #ffffff63;
+}
+th {
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+}
+#vanor, #toppHastighet, .vanaInputField {
+    background-color: #000000;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    height: 20px;
+    color: #ffffff;
+}
+#navigationDots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+.dot:hover {
+    background-color: #717171;
+}
