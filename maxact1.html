@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maxact Korrelation Kalkylator</title>
+    <link rel="stylesheet" href="maxact1.css">
+    <script src="maxact1.js" defer></script>
+</head>
+<body>
+    <div id="page1" class="page">
+        <h1>Maxact Korrelation Kalkylator</h1>
+        <p>Detta är en kalkylator som räknar ut korrelationen mellan två värden.</p>
+
+        <div id="container">
+            <div id="output">
+                <label for="vanor">Vanor: </label>
+                <div id="vanorContainer">
+                    <div class="vanaInput">
+                        <input type="text" id="vanor" placeholder="Vilka vanor innan match">
+                        <button type="button" class="removeVana" onclick="removeVana(this)">✖</button>
+                    </div>
+                </div>
+
+                <button type="button" onclick="addVana()">Lägg till ny vana</button>
+                
+                <label for="toppHastighet">Topp hastighet: </label>
+                <input type="number" id="toppHastighet" placeholder="Vad var topphastigheten">
+
+                <button onclick="calculate()">Beräkna</button>
+            </div>
+
+            <div id="results">
+                <button onclick="deleteSelectedRows()">Ta bort valda rader</button>
+                <table id="resultsTable" border="1">
+                    <thead>
+                        <tr>
+                            <th>Välj</th>
+                            <th>Match nummer</th>
+                            <th>Topp hastighet</th>
+                            <th>Vanor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Rows will be added here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <h2>Vanor och Topp Hastighet Analys</h2>
+        <table id="analysisTable" border="1">
+            <thead>
+                <tr>
+                    <th>Vana</th>
+                    <th>Medeltopphastighet (km/h)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Analysis results will be added here -->
+            </tbody>
+        </table>
+
+        <div id="highestSpeedHabit" class="highlight-box">
+            <!-- This box will display the habit with the highest average top speed -->
+        </div>
+    </div>
+
+    <!-- Integrate the form from maxact.html -->
+    <div id="ShowForm" style="display: none;">
+        <form id="Enkät">
+            <label for="Kategori">Category</label>
+            <select id="Kategori" name="Kategori" required>
+                <option value="">Välj kategori</option>
+                <option value="Kost">Kost</option>
+                <option value="Kosttillskott">Kosttillskott</option>
+                <option value="Dryck">Dryck</option>
+                <option value="Träning">Träning</option>
+                <option value="Fysisk aktivitet">Fysisk aktivitet</option>
+                <option value="Fotbollsträning">Fotbollsträning</option>
+                <option value="Sömn">Sömn</option>
+                <option value="Övrigt">Övrigt</option>
+            </select>
+
+            <div id="dynamic-fields"></div>
+
+            <label for="Datum">Date</label>
+            <input type="date" id="Datum" name="Datum" required>
+
+            <label for="Tid">Time</label>
+            <input type="time" id="Tid" name="Tid" required>
+
+            <label for="Beskrivning">Description</label>
+            <textarea id="Beskrivning" name="Beskrivning" rows="4" placeholder="Describe your habit"></textarea>
+
+            <input type="submit" value="Send">
+        </form>
+    </div>
+
+    <button onclick="Form()">Lägg till ny vana</button>
+
+    <script>
+        function Form() {
+            var x = document.getElementById("ShowForm");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
+
